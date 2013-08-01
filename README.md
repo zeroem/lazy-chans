@@ -1,10 +1,12 @@
 # lazy-go
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library designed to turn a list of go blocks into a lazy-seq
 
 ## Usage
 
-FIXME
+(require '[lazy-go/core :refer (layz-go!!)])
+
+(lazy-go!! (go 1) (go 2) (go 3))
 
 ## License
 
