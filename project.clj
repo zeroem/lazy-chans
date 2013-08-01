@@ -1,5 +1,5 @@
-(defproject lazy-chans "0.1.0-SNAPSHOT"
-  :description "turn one or more go blocks into a lazy-seq"
+(defproject zeroem/lazy-chans "0.1.0-SNAPSHOT"
+  :description "turn one or more channels into a lazy-seq"
   :url "http://github.com/zeroem/lazy-chans"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
