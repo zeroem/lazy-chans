@@ -5,6 +5,6 @@
 
 (deftest lazy-seq-of-channel-messages
   (testing "lazy-chans!! returns a lazy-seq of channel results"
-           (let [s (lazy-chans!! (go 1) (go 2) (go 3))]
+           (let [s (lazy-chans!! [(go 1) (go 2) (go 3)])]
              (is (= '(1 2 3) (sort s)))
              (is (= 3 (count s))))))
