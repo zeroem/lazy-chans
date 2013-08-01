@@ -1,6 +1,6 @@
-(ns lazy-go.core-test
+(ns lazy-chans.core-test
   (:require [clojure.test :refer :all]
-            [lazy-go.core :refer :all]))
+            [lazy-chans.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

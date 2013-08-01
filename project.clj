@@ -1,6 +1,6 @@
-(defproject lazy-go "0.1.0-SNAPSHOT"
+(defproject lazy-chans "0.1.0-SNAPSHOT"
   :description "turn one or more go blocks into a lazy-seq"
-  :url "http://github.com/zeroem/lazy-go"
+  :url "http://github.com/zeroem/lazy-chans"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
