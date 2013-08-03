@@ -13,7 +13,7 @@
   (testing "can reduce with no messages"
            (let [f (fn [] true)
                  ch (chan)
-                 result (reduce-chan f ch)]
+                 result (*reduce-chan* f ch)]
              (close! ch)
              (Thread/sleep 100)
              (is (= true @result))))
@@ -21,7 +21,7 @@
   (testing "can reduce with one messages"
            (let [f (fn [a] a)
                  ch (chan)
-                 result (reduce-chan f ch)]
+                 result (*reduce-chan* f ch)]
              (>!! ch true)
              (close! ch)
              (Thread/sleep 100)
@@ -30,7 +30,7 @@
   (testing "can reduce two messages"
            (let [f +
                  ch (chan)
-                 result (reduce-chan f ch)]
+                 result (*reduce-chan* f ch)]
              (>!! ch 1)
              (>!! ch 2)
              (Thread/sleep 100)
@@ -39,7 +39,7 @@
    (testing "can reduce more messages"
            (let [f +
                  ch (chan)
-                 result (reduce-chan f ch)]
+                 result (*reduce-chan* f ch)]
              (>!! ch 1)
              (>!! ch 2)
              (>!! ch 3)
@@ -50,7 +50,7 @@
    (testing "can reduce with initial value and no messages"
            (let [f (fn [a] a)
                  ch (chan)
-                 result (reduce-chan f 1 ch)]
+                 result (*reduce-chan* f 1 ch)]
              (close! ch)
              (Thread/sleep 100)
              (is (= 1 @result))))
@@ -58,7 +58,7 @@
    (testing "can reduce with initial value and one message"
            (let [f +
                  ch (chan)
-                 result (reduce-chan f 1 ch)]
+                 result (*reduce-chan* f 1 ch)]
              (>!! ch 1)
              (close! ch)
              (Thread/sleep 100)
@@ -67,7 +67,7 @@
    (testing "can reduce with initial value and more message"
            (let [f +
                  ch (chan)
-                 result (reduce-chan f 1 ch)]
+                 result (*reduce-chan* f 1 ch)]
              (>!! ch 1)
              (>!! ch 1)
              (close! ch)

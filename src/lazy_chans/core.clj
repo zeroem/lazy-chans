@@ -17,7 +17,7 @@
           (swap! a f msg)
           (recur))))))
 
-(defn reduce-chan
+(defn *reduce-chan*
   ([f v ch] (let [result (atom v)]
     (go
       (if-let [initial-message (<! ch)]
