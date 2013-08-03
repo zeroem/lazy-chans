@@ -18,11 +18,11 @@
           (recur))))))
 
 (defn *reduce-chan*
-  ([f v ch] (let [result (atom v)]
+  ([f v ch] (let [result (atom nil)]
     (go
       (if-let [initial-message (<! ch)]
         (do
-          (swap! result f initial-message)
+          (reset! result (f v initial-message))
           (reduce-additional-messages result f ch))
         (reset! result (f v))))
     result))
